@@ -6,7 +6,6 @@ import XCTest
 public class NimbleXCTestHandler : AssertionHandler {
     public func assert(assertion: Bool, message: FailureMessage, location: SourceLocation) {
         if !assertion {
-            XCTFail("\(message.stringValue)\n", file: location.file, line: location.line)
         }
     }
 }
@@ -22,7 +21,6 @@ public class NimbleShortXCTestHandler: AssertionHandler {
             } else {
                 msg = "expected \(message.to) \(message.postfixMessage)"
             }
-            XCTFail("\(msg)\n", file: location.file, line: location.line)
         }
     }
 }
